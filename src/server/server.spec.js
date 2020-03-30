@@ -8,5 +8,5 @@ describe('Server', () => {
 
   it('should require a port to start', () => {
     return server.start(container).should.be.rejected();
-  })
-})
+  });
+});

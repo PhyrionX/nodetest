@@ -16,5 +16,5 @@ describe('Invoice service', () => {
       get,
       'https://hr7tdqab73.execute-api.eu-west-1.amazonaws.com/dev/invoices/a',
       { headers: { Authorization: 'b' } } );
-  })
-})
+  });
+});

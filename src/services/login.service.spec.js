@@ -20,4 +20,4 @@ describe('Login service', () => {
         password: 'password-test'
       } );
   })
-})
+});

@@ -1,5 +1,5 @@
 const { createContainer, asValue } = require('awilix');
-const request = require('supertest')
+const request = require('supertest');
 const services = require('../services');
 const server = require('../server/server');
 
@@ -21,13 +21,13 @@ describe('Login API', () => {
     return server.start(container)
       .then(serv => {
         app = serv
-      })
-  })
+      });
+  });
 
   afterEach(() => {    
     app.close();
     app = null;
-  })
+  });
 
   it('can get a authentication token', (done) => {
     const result = {
@@ -43,6 +43,6 @@ describe('Login API', () => {
       .expect((res) => {
         res.body.should.containEql(result);
       })
-      .expect(200, done)
-  })
-})
+      .expect(200, done);
+  });
+});

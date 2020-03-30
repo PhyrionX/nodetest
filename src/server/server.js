@@ -1,8 +1,8 @@
-const express = require('express')
-const bodyparser = require('body-parser')
-const cors = require('cors')
-const invoiceApi = require('../api/invoice')
-const loginApi = require('../api/login')
+const express = require('express');
+const bodyparser = require('body-parser');
+const cors = require('cors');
+const invoiceApi = require('../api/invoice');
+const loginApi = require('../api/login');
 // const axios = require('axios')
 
 const start = (container) => {
@@ -33,4 +33,4 @@ const start = (container) => {
   })
 }
 
-module.exports = Object.assign({}, { start })
+module.exports = Object.assign({}, { start });

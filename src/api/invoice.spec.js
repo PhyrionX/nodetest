@@ -1,5 +1,5 @@
 const { createContainer, asValue } = require('awilix');
-const request = require('supertest')
+const request = require('supertest');
 const services = require('../services');
 const server = require('../server/server');
 
@@ -22,12 +22,12 @@ describe('Invoice API', () => {
       .then(serv => {
         app = serv
       })
-  })
+  });
 
   afterEach(() => {    
     app.close();
     app = null;
-  })
+  });
 
   it('can get invoice', (done) => {
     const result = {
@@ -63,5 +63,5 @@ describe('Invoice API', () => {
         res.body.should.containEql(result);
       })
       .expect(200, done)
-  })
-})
+  });
+});
