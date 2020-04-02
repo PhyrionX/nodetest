@@ -8,4 +8,12 @@ const getInvoice = ({ invoiceId, authorization }) => {
   })
 }
 
-module.exports = Object.assign({}, { getInvoice });
+const sendInvoice = ({ invoice, authorization, advanced }) => {
+  return  axios.post(`https://hr7tdqab73.execute-api.eu-west-1.amazonaws.com/dev/printer/${ advanced ? 'advanced' : 'basic' }/`, invoice, {
+    headers: {
+      Authorization: authorization
+    }
+  })
+}
+
+module.exports = Object.assign({}, { getInvoice, sendInvoice });
