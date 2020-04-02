@@ -8,6 +8,14 @@ const getInvoice = ({ invoiceId, authorization }) => {
   })
 }
 
+const getClients = ({ clientId, authorization }) => {
+  return  axios.get('https://hr7tdqab73.execute-api.eu-west-1.amazonaws.com/dev/clients/' + clientId, {
+    headers: {
+      Authorization: authorization
+    }
+  })
+}
+
 const sendInvoice = ({ invoice, authorization, advanced }) => {
   return  axios.post(`https://hr7tdqab73.execute-api.eu-west-1.amazonaws.com/dev/printer/${ advanced ? 'advanced' : 'basic' }/`, invoice, {
     headers: {
@@ -16,4 +24,4 @@ const sendInvoice = ({ invoice, authorization, advanced }) => {
   })
 }
 
-module.exports = Object.assign({}, { getInvoice, sendInvoice });
+module.exports = Object.assign({}, { getInvoice, sendInvoice, getClients });
