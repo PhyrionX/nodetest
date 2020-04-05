@@ -9,7 +9,23 @@ const getInvoice = ({ invoiceId, authorization }) => {
 }
 
 const getClients = ({ clientId, authorization }) => {
-  return  axios.get('https://hr7tdqab73.execute-api.eu-west-1.amazonaws.com/dev/clients/' + clientId, {
+  return axios.get('https://hr7tdqab73.execute-api.eu-west-1.amazonaws.com/dev/clients/' + clientId, {
+    headers: {
+      Authorization: authorization
+    }
+  })
+}
+
+const getDepartment = ({ departmentId, authorization }) => {
+  return axios.get('https://hr7tdqab73.execute-api.eu-west-1.amazonaws.com/dev/departments/' + departmentId, {
+    headers: {
+      Authorization: authorization
+    }
+  })
+}
+
+const getProduct = ({ productId, authorization }) => {
+  return axios.get('https://hr7tdqab73.execute-api.eu-west-1.amazonaws.com/dev/products/' + productId, {
     headers: {
       Authorization: authorization
     }
@@ -24,4 +40,4 @@ const sendInvoice = ({ invoice, authorization, advanced }) => {
   })
 }
 
-module.exports = Object.assign({}, { getInvoice, sendInvoice, getClients });
+module.exports = Object.assign({}, { getInvoice, sendInvoice, getClients, getDepartment, getProduct });
