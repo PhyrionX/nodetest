@@ -24,7 +24,6 @@ module.exports = (app) => {
           const { data: { data: product } }  = await invoiceService.getProduct({ productId: lineItem.product, authorization });
           const { data: { data: department } } = await invoiceService.getDepartment({ departmentId: lineItem.department, authorization });
           
-          
           lineItems = [ 
             ...lineItems, 
             {
